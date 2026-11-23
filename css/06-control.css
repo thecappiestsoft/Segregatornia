@@ -1,0 +1,19 @@
+/* Kontrola sortowni: lista wyników, żetony pojemników i graczy, baner */
+/* control list */
+.ctl{display:grid;gap:6px;max-height:420px;overflow:auto;padding-right:4px}
+.ctl-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:start;padding:8px 10px;border-radius:10px;background:var(--surface-2)}
+.ctl-row.no{background:var(--bad-bg)}
+.ctl-row .e{font-size:24px;line-height:1.2}
+.ctl-row .t{min-width:0}
+.ctl-row .t b{display:block}
+.ctl-row .t small{color:var(--muted);display:block}
+.ctl-row .t p{margin:4px 0 0;font-size:13px}
+.ctl-row .p{font-family:var(--font-mono);font-weight:600}
+.ctl-row .p.plus{color:var(--good)}
+.ctl-row .p.minus{color:var(--bad)}
+.bchip{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:1px 7px;border-radius:999px;background:var(--bc);color:var(--tc);white-space:nowrap}
+.pchip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600}
+.big-banner{border-radius:12px;padding:14px 16px;color:#fff;background:#1a1a1a;position:relative;overflow:hidden}
+.big-banner h4{font-family:var(--font-display);font-weight:400;font-size:26px;color:var(--accent);margin:0}
+.big-banner p{margin:4px 0 0;color:#ddd;font-size:14px}
+.gain{font-family:var(--font-mono);font-size:34px;font-weight:600}

@@ -1,0 +1,56 @@
+/**
+ * Segregatornia – Pula pytań ogólnych (pola „?” i pytania zastępcze). EN w tej samej kolejności co PL.
+ * Format PL: [pytanie, [opcje – PIERWSZA poprawna], wyjaśnienie, poziom 1|2]
+ */
+const POOL = [
+['Gospodarka o obiegu zamkniętym (GOZ) polega na…',['jak najdłuższym utrzymywaniu produktów i surowców w użyciu','produkcji, użyciu i wyrzuceniu na wysypisko','spalaniu wszystkich odpadów'],'Odpad w GOZ staje się surowcem.',1],
+['Która kolejność to hierarchia postępowania z odpadami (od najlepszego)?',['zapobiegaj → użyj ponownie → recykling → odzysk energii → składowanie','recykling → zapobiegaj → składowanie','składowanie → recykling → zapobiegaj'],'Najlepiej, żeby odpad w ogóle nie powstał.',2],
+['Mikroplastik pierwotny to…',['drobiny celowo produkowane jako małe, np. granulat czy dodatki do kosmetyków','plastik z pierwszej butelki','plastik leżący na wierzchu śmietnika'],'Wtórny mikroplastik powstaje z rozpadu większych przedmiotów.',2],
+['Podczas prania polarów i ubrań z poliestru do wody trafiają…',['mikrowłókna – rodzaj mikroplastiku','włókna bawełny','cząstki szkła'],'Pełna pralka i niższa temperatura zmniejszają ich ilość.',1],
+['Skąd pochodzi duża część mikroplastiku przy drogach?',['ze ścierania opon','z kory drzew','z liści'],'Opony ścierają się na każdym kilometrze.',2],
+['Gdzie naukowcy znaleźli mikroplastik?',['w oceanach, w lodzie Arktyki, w wodzie pitnej, a nawet w ludzkiej krwi','tylko na wysypiskach','nigdzie – to mit'],'Mikroplastik jest dziś niemal wszędzie.',1],
+['Polimer to…',['związek zbudowany z bardzo wielu powtarzających się małych cząsteczek (merów)','rodzaj metalu','pierwiastek chemiczny'],'„Poli” znaczy „wiele”.',2],
+['Z czego produkuje się większość tworzyw sztucznych?',['z ropy naftowej i gazu ziemnego','z piasku','z drewna'],'To surowce nieodnawialne.',1],
+['Monomerem polietylenu (PE) jest…',['etylen (eten)','glukoza','chlor'],'Polimeryzacja łączy tysiące cząsteczek etenu w długi łańcuch.',2],
+['Który polimer zawiera chlor?',['PVC – polichlorek winylu','PET','PP'],'Dlatego spalanie PVC jest szczególnie groźne.',2],
+['Tworzywa z kodem 7 to…',['„inne” – np. poliwęglan, PLA i mieszanki','zawsze tworzywa biodegradowalne','wyłącznie szkło akrylowe'],'Kod 7 to worek z „resztą” – najtrudniejsze w recyklingu.',2],
+['Która czynność to upcykling?',['zrobienie huśtawki ze starej opony','wyrzucenie opony do lasu','spalenie opony'],'Upcykling nadaje odpadowi nową, wartościową funkcję.',1],
+['Co obejmuje polski system kaucyjny (od października 2025)?',['butelki plastikowe do 3 l i puszki do 1 l','baterie i leki','kartony po pizzy'],'Do systemu należą też szklane butelki wielorazowe.',2],
+['Ile wynosi kaucja za butelkę PET lub puszkę?',['50 gr','5 zł','1 gr'],'Kaucję odzyskujesz w sklepie przy zwrocie opakowania.',1],
+['Dlaczego torba bawełniana nie zawsze jest „eko”?',['jej produkcja zużywa dużo wody i energii – opłaca się dopiero po wielu użyciach','bo jest z plastiku','bo nie da się jej wyprać'],'Liczy się, ile razy jej użyjesz.',2],
+['Co to jest kompostowanie?',['rozkład odpadów organicznych przez mikroorganizmy w obecności tlenu','spalanie śmieci','zakopywanie plastiku'],'Bez tlenu zachodzi fermentacja (biogazownia).',1],
+['Dlaczego tworzywa sztuczne tak długo się rozkładają?',['w przyrodzie brakuje organizmów, które łatwo rozkładają długie łańcuchy polimerów','bo są ciężkie','bo są kolorowe'],'Polimery syntetyczne są dla przyrody „nowością”.',2],
+['Czym jest Wielka Pacyficzna Plama Śmieci?',['obszarem oceanu z dużym stężeniem odpadów, głównie mikroplastiku','wyspą z plastiku, po której można chodzić','śmietnikiem w Kalifornii'],'Prądy oceaniczne gromadzą tam odpady z wielu krajów.',2],
+['Jaki kolor ma pojemnik na szkło?',['zielony','niebieski','brązowy'],'W Polsce kolory pojemników są takie same w każdej gminie.',1],
+['Do którego pojemnika trafia papier?',['niebieskiego','żółtego','zielonego'],'Niebieski = papier i tektura.',1],
+['Brązowy pojemnik jest na…',['bioodpady','metale','szkło'],'Bio = resztki roślinne i odpady zielone.',1],
+['Co to jest ekoprojektowanie?',['projektowanie produktów tak, by łatwo je naprawić i przetworzyć','malowanie produktów na zielono','produkcja bez reklam'],'Dobry projekt myśli o końcu życia produktu.',2],
+['Jak możesz ograniczyć mikroplastik w domu?',['prać w pełnej pralce w niższej temperaturze i wybierać naturalne tkaniny','prać codziennie pojedyncze polary','kupować więcej plastikowych gadżetów'],'Mniej tarcia i mniej prań = mniej mikrowłókien.',1],
+['Co znaczy „oxo-degradowalny” plastik?',['plastik, który kruszy się na mikroplastik – w UE jest zakazany','plastik, który zamienia się w tlen','plastik z owoców'],'Rozpad na kawałki to nie biodegradacja.',2]
+];
+const POOL_EN = [
+["A circular economy is about…",["keeping products and materials in use for as long as possible","making, using and dumping things in a landfill","burning all waste"],"In a circular economy, waste becomes a raw material."],
+["Which order is the waste hierarchy (best first)?",["prevent → reuse → recycle → energy recovery → landfill","recycle → prevent → landfill","landfill → recycle → prevent"],"It is best if the waste is never created."],
+["Primary microplastic is…",["particles made small on purpose, e.g. pellets or cosmetic additives","plastic from the first bottle","plastic lying on top of a rubbish heap"],"Secondary microplastic forms when larger objects break apart."],
+["When fleeces and polyester clothes are washed, the water carries away…",["microfibres – a type of microplastic","cotton fibres","glass particles"],"A full machine and a lower temperature reduce how many are released."],
+["Where does much of the microplastic beside roads come from?",["tyre wear","tree bark","leaves"],"Tyres wear down with every kilometre."],
+["Where have scientists found microplastic?",["in oceans, Arctic ice, drinking water and even human blood","only in landfills","nowhere – it’s a myth"],"Microplastic is now almost everywhere."],
+["A polymer is…",["a compound built from very many repeating small molecules (monomers)","a kind of metal","a chemical element"],"“Poly” means “many”."],
+["What are most plastics made from?",["crude oil and natural gas","sand","wood"],"These are non-renewable resources."],
+["The monomer of polyethylene (PE) is…",["ethylene (ethene)","glucose","chlorine"],"Polymerisation joins thousands of ethene molecules into a long chain."],
+["Which polymer contains chlorine?",["PVC – polyvinyl chloride","PET","PP"],"That is why burning PVC is especially dangerous."],
+["Plastics with code 7 are…",["“other” – e.g. polycarbonate, PLA and blends","always biodegradable plastics","only acrylic glass"],"Code 7 is a catch-all – the hardest to recycle."],
+["Which activity is upcycling?",["making a swing from an old tyre","throwing a tyre into the woods","burning a tyre"],"Upcycling gives waste a new, valuable use."],
+["What does Poland’s deposit-return system (from October 2025) cover?",["plastic bottles up to 3 l and cans up to 1 l","batteries and medicines","pizza boxes"],"Reusable glass bottles are part of the system too."],
+["How much is the deposit on a PET bottle or can in Poland?",["50 grosze","5 złoty","1 grosz"],"You get the deposit back in the shop when you return the packaging."],
+["Why isn’t a cotton bag always “eco”?",["making it uses lots of water and energy – it only pays off after many uses","because it is plastic","because it can’t be washed"],"What counts is how many times you use it."],
+["What is composting?",["microorganisms breaking down organic waste in the presence of oxygen","burning rubbish","burying plastic"],"Without oxygen, fermentation happens instead (biogas plant)."],
+["Why do plastics take so long to break down?",["nature lacks organisms that easily break down long polymer chains","because they are heavy","because they are colourful"],"Synthetic polymers are a “novelty” for nature."],
+["What is the Great Pacific Garbage Patch?",["an ocean area with a high concentration of waste, mostly microplastic","an island of plastic you can walk on","a rubbish dump in California"],"Ocean currents gather waste there from many countries."],
+["What colour is the glass bin in Poland?",["green","blue","brown"],"In Poland the bin colours are the same in every municipality."],
+["Which bin does paper go into?",["blue","yellow","green"],"Blue = paper and cardboard."],
+["The brown bin is for…",["bio-waste","metals","glass"],"Bio = plant scraps and green waste."],
+["What is ecodesign?",["designing products so they are easy to repair and recycle","painting products green","making products without advertising"],"Good design thinks about the end of a product’s life."],
+["How can you reduce microplastic at home?",["wash full loads at a lower temperature and choose natural fabrics","wash single fleeces every day","buy more plastic gadgets"],"Less friction and fewer washes = fewer microfibres."],
+["What does “oxo-degradable” plastic mean?",["plastic that crumbles into microplastic – it is banned in the EU","plastic that turns into oxygen","plastic made from fruit"],"Falling into pieces is not biodegradation."]
+];

@@ -1,0 +1,33 @@
+/* Zmienne: kolory, czcionki, motyw jasny/ciemny.
+   Kolory pojemników: --b-P (papier), --b-S (szkło), --b-M (metale i tworzywa), --b-B (bio), --b-Z (zmieszane),
+   --b-E (elektro), --b-A (baterie), --b-L (leki), --b-N (niebezpieczne). */
+:root{
+  --bg:#E8ECE7; --surface:#FBFCFA; --surface-2:#F0F3EF; --ink:#16201B; --muted:#56655E; --line:#CBD4CE;
+  --belt:#29312D; --belt-2:#353F3A; --belt-ink:#9DAAA3;
+  --accent:#F2B705; --accent-ink:#16201B;
+  --good:#1E8649; --bad:#BF3328; --good-bg:#DCF0E3; --bad-bg:#F7DDD9;
+  --life:#1E8649; --on-color:#FFFFFF;
+  --b-P:#2D6CDF; --b-S:#2A9550; --b-M:#F2C230; --b-B:#8B5A2B; --b-Z:#3B403E; --b-E:#C73A2E; --b-A:#E3761B; --b-L:#ECF1ED; --b-N:#7B4FB3;
+  --font-display:'Saira Stencil One','Lexend',Impact,sans-serif;
+  --font-body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111614; --surface:#1A211E; --surface-2:#222B27; --ink:#E5ECE8; --muted:#96A59E; --line:#33403A;
+    --belt:#0B0F0D; --belt-2:#19201C; --belt-ink:#7D8B84;
+    --accent:#F5C430; --accent-ink:#16201B;
+    --good:#4CC27D; --bad:#F06A5D; --good-bg:#16301F; --bad-bg:#3A1C19;
+    --life:#4CC27D; --b-Z:#59625E; --b-L:#D5DED8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111614; --surface:#1A211E; --surface-2:#222B27; --ink:#E5ECE8; --muted:#96A59E; --line:#33403A;
+  --belt:#0B0F0D; --belt-2:#19201C; --belt-ink:#7D8B84;
+  --accent:#F5C430; --accent-ink:#16201B;
+  --good:#4CC27D; --bad:#F06A5D; --good-bg:#16301F; --bad-bg:#3A1C19;
+  --life:#4CC27D; --b-Z:#59625E; --b-L:#D5DED8;
+  color-scheme:dark;
+}

@@ -1,0 +1,12 @@
+/* Ekran końcowy: podium, tabela wyników */
+/* END */
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:12px;margin:10px 0 20px;flex-wrap:wrap}
+.pod{display:flex;flex-direction:column;align-items:center;gap:6px;width:150px}
+.pod .blk{width:100%;border-radius:10px 10px 0 0;background:var(--belt);color:var(--accent);display:grid;place-items:center;font-family:var(--font-display);font-size:34px}
+.pod .pn{font-weight:700;text-align:center;overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.end-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:18px}

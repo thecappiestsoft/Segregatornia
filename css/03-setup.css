@@ -1,0 +1,31 @@
+/* Ekran startowy: hero z taśmociągiem, konfiguracja gry, „Jak grać” */
+/* SETUP */
+.hero{background:var(--belt);color:#E9EEEA;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.hero-in{padding:28px 24px 18px}
+.hero h1{font-family:var(--font-display);font-size:clamp(40px,8vw,84px);font-weight:400;letter-spacing:.01em;color:var(--accent)}
+.hero p{max-width:60ch;color:#C9D3CD;margin:.6em 0 0}
+.belt-strip{position:relative;height:74px;background:repeating-linear-gradient(90deg,#1c2320 0 3px,#2c3531 3px 26px);border-top:3px solid #0006;border-bottom:3px solid #0006;overflow:hidden}
+.belt-track{position:absolute;top:12px;left:0;display:flex;gap:46px;font-size:38px;white-space:nowrap;animation:belt 26s linear infinite}
+@keyframes belt{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-foot{height:12px}
+.setup{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.box h2{font-size:18px;margin-bottom:12px}
+.lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.lbl:first-of-type{margin-top:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1.5px solid var(--line);background:var(--surface-2);border-radius:8px;padding:8px 14px;font-weight:600;min-width:44px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.name-row{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+.name-row input{flex:1;min-width:0;border:none;background:transparent;font:inherit;color:var(--ink);padding:6px 0}
+.dot{width:14px;height:14px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px #0002}
+.check{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
+.check small{display:block;color:var(--muted)}
+.est{color:var(--muted);font-size:14px;margin-top:8px}
+.start-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.how ol{padding-left:20px;margin:0;display:grid;gap:8px}
+.how li::marker{font-family:var(--font-mono);font-weight:600}
+.codes-strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.code-pill{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:4px 8px 4px 4px;font-size:13px;background:var(--surface-2)}

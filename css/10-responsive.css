@@ -1,0 +1,5 @@
+/* Responsywność i ograniczenie animacji (prefers-reduced-motion) */
+@media (max-width:960px){.layout{grid-template-columns:minmax(0,1fr)}.board-wrap{max-width:620px;margin:0 auto;width:100%}}
+@media (max-width:760px){.setup,.end-grid{grid-template-columns:minmax(0,1fr)}.names{grid-template-columns:minmax(0,1fr)}.legend{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:440px){.bins{gap:7px}.bin .body{min-height:64px;padding:6px 7px 8px}.bin .bn{font-size:12.5px}.bin .bs{display:none}.opts.codes{grid-template-columns:repeat(4,minmax(0,1fr))}.card .art{width:60px;height:60px;font-size:34px}}
+@media (prefers-reduced-motion:reduce){.belt-track,.bins.pick .bin,.die.rolling{animation:none}.pawn{transition:none}}

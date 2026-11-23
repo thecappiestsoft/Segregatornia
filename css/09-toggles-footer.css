@@ -1,0 +1,6 @@
+/* Przełączniki języka i motywu, stopka */
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang button{border:none;background:transparent;padding:8px 12px;font-weight:600;font-size:13px;letter-spacing:.06em;font-family:var(--font-mono)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.theme button{display:grid;place-items:center;padding:7px 11px}
+.foot{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}

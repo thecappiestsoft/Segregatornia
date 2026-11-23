@@ -1,0 +1,40 @@
+/* Ekran gry: wyniki graczy, plansza 8×8 (pętla 28 pól), kostka, pionki */
+/* GAME */
+.scores{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{display:flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:6px 12px;min-width:0}
+.chip.cur{border-color:var(--ink);box-shadow:0 0 0 3px var(--accent)}
+.chip .nm{font-weight:600;max-width:12ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip .sc{font-family:var(--font-mono);font-weight:600;font-size:20px}
+.chip .meta{font-size:11px;color:var(--muted);line-height:1.2}
+.layout{display:grid;grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:18px;align-items:start}
+.board-wrap{container-type:inline-size;min-width:0}
+.board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);aspect-ratio:1;width:100%;gap:3px;background:var(--belt);padding:6px;border-radius:14px}
+.cell{position:relative;background:var(--belt-2);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--belt-ink);overflow:hidden;
+  background-image:repeating-linear-gradient(90deg,#0000 0 6px,#ffffff08 6px 8px)}
+.cell .sym{font-size:4.2cqi;line-height:1;font-weight:700}
+.cell .fl{font-size:1.55cqi;text-transform:uppercase;letter-spacing:.06em;margin-top:.6cqi;text-align:center;line-height:1.1;font-weight:600;padding:0 2px}
+.cell .ix{position:absolute;top:2px;left:4px;font-size:1.4cqi;font-family:var(--font-mono);opacity:.55}
+.cell.t-w .sym{font-size:3.2cqi;opacity:.55}
+.cell.t-start{background:var(--accent);color:var(--accent-ink)}
+.cell.t-control{background:repeating-linear-gradient(-45deg,var(--accent) 0 7px,#1a1a1a 7px 14px);color:#fff}
+.cell.t-control .sym,.cell.t-control .fl{background:#1a1a1aE6;border-radius:4px;padding:1px 4px}
+.cell.t-life{background:#1E6B40;color:#E3F7EA}
+.cell.t-q{background:#2D5DB0;color:#E6EEFF}
+.cell.t-haz{background:#C2561B;color:#FFF1E6}
+.cell.t-jam{background:#5A2420;color:#FFD9D4}
+.cell.t-express{background:#3E4A9E;color:#E8EAFF}
+.cell.hl{outline:3px solid var(--accent);outline-offset:-3px}
+.pawns{position:absolute;inset:auto 2px 2px 2px;display:flex;flex-wrap:wrap;gap:2px;justify-content:center}
+.pawn{width:2.6cqi;height:2.6cqi;min-width:9px;min-height:9px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 3px #000a;transition:transform .2s}
+.pawn.me{transform:scale(1.35);z-index:2}
+.center{grid-area:2/2/8/8;background:var(--surface);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2cqi;padding:3cqi;text-align:center;color:var(--ink)}
+.round{font-family:var(--font-mono);font-size:max(11px,2cqi);letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.now{font-size:max(14px,3.6cqi);font-weight:700;display:flex;align-items:center;gap:8px;max-width:100%}
+.now span.n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.die{--ds:max(56px,13cqi);width:var(--ds);height:var(--ds);background:var(--surface);border:2.5px solid var(--ink);border-radius:22%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:calc(var(--ds) * .14);gap:calc(var(--ds) * .05);box-shadow:0 4px 0 var(--line)}
+.die i{border-radius:50%;background:transparent}
+.die i.on{background:var(--ink)}
+.die.rolling{animation:shake .5s}
+@keyframes shake{20%{transform:rotate(-14deg)}50%{transform:rotate(12deg)}80%{transform:rotate(-6deg)}}
+.msg{font-size:max(12px,2.3cqi);color:var(--muted);max-width:42ch;min-height:2.6em}
+@container (max-width:470px){.cell .fl,.cell .ix{display:none}.cell .sym{font-size:5cqi}}

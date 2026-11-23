@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Segregatornia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Lexend:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="css/00-reset.css">
+  <link rel="stylesheet" href="css/01-variables.css">
+  <link rel="stylesheet" href="css/02-base.css">
+  <link rel="stylesheet" href="css/03-setup.css">
+  <link rel="stylesheet" href="css/04-board.css">
+  <link rel="stylesheet" href="css/05-panel.css">
+  <link rel="stylesheet" href="css/06-control.css">
+  <link rel="stylesheet" href="css/07-end.css">
+  <link rel="stylesheet" href="css/08-modal.css">
+  <link rel="stylesheet" href="css/09-toggles-footer.css">
+  <link rel="stylesheet" href="css/10-responsive.css">
+</head>
+<body>
+  <div class="wrap" id="app"></div>
+  <div id="modal-root"></div>
+  <footer class="foot wrap">© 2026 CappySoft.pl</footer>
+
+  <!-- Kolejność ma znaczenie: zwykłe skrypty (nie moduły) współdzielą zakres globalny. -->
+  <script src="js/config/settings.js"></script>
+  <script src="js/data/bins.js"></script>
+  <script src="js/data/cards.pl.js"></script>
+  <script src="js/data/cards.en.js"></script>
+  <script src="js/data/questions.js"></script>
+  <script src="js/data/second-life.js"></script>
+  <script src="js/i18n/ui-texts.js"></script>
+  <script src="js/core/data-access.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/ui/toggles.js"></script>
+  <script src="js/ui/setup-screen.js"></script>
+  <script src="js/game/logic.js"></script>
+  <script src="js/game/quiz.js"></script>
+  <script src="js/ui/game-screen.js"></script>
+  <script src="js/ui/end-screen.js"></script>
+  <script src="js/ui/modals.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
